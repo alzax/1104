@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение файла стилей -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const telegram = window.Telegram.WebApp;
+            document.body.style.backgroundColor = telegram.themeParams.bg_color || '#FFFFFF';
+            document.body.style.color = telegram.themeParams.text_color || '#000000';
+        });
+    </script>
+</head>
+<body>
+    <h1>Chat with ChatGPT</h1>
+    <form method="post">
+        <input type="text" name="message" placeholder="Введите сообщение" required>
+        <button type="submit">Отправить</button>
+    </form>
+    {% if user_input %}
+        <div class="message">
+            <p><strong>Вы:</strong> {{ user_input }}</p>
+            <p><strong>ChatGPT:</strong> {{ bot_response }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

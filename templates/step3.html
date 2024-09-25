@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>AI Language Cards</h1>
+<p>Выбранный язык: <strong>{{ language }}</strong></p>
+<p>Выбранная тематика: <strong>{{ topic }}</strong></p>
+<h2>Список слов:</h2>
+<ul>
+    {% for word in words %}
+    <li>{{ word.word }} - {{ word.translation }}</li>
+    {% endfor %}
+</ul>
+<form method="post">
+    <button type="submit" name="action" value="учить">Учить</button>
+</form>
+<form method="post">
+    <button type="submit" name="back" value="true">Назад</button>
+</form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>AI Language Cards</h1>
+
+<!-- Кнопка "Назад" -->
+<form method="post">
+    <button type="submit" name="back" value="true" class="back-button">Назад</button>
+</form>
+
+<!-- Слово для перевода -->
+<p>Переведите слово: <strong>{{ word }}</strong></p>
+
+<!-- Варианты ответов как вертикальные кнопки -->
+{% if not result %}
+<form method="post" class="options-form">
+    {% for option in options %}
+    <button type="submit" name="option" value="{{ option }}" class="option-button">{{ option }}</button>
+    {% endfor %}
+</form>
+{% endif %}
+
+<!-- Сообщение о результате -->
+{% if result %}
+<div id="result-message" class="result-message">
+    {% if result == 'correct' %}
+    <p class="correct">Правильный ответ!</p>
+    {% else %}
+    <p class="incorrect">Неправильный ответ.</p>
+    {% endif %}
+</div>
+
+<!-- JavaScript для автоматического перехода через 3 секунды -->
+<script>
+    setTimeout(function(){
+        window.location.href = "{{ url_for('index') }}";
+    }, 3000);
+</script>
+{% endif %}
+
+{% endblock %}

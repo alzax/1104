@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>AI Language Cards</h1>
+<p>Вы успешно завершили обучение!</p>
+<p>Количество правильных ответов: <strong>{{ correct_answers }}</strong> из <strong>{{ total_words }}</strong></p>
+<form method="post">
+    <button type="submit" name="action" value="finished" class="option-button">Начать заново</button>
+</form>
+{% endblock %}

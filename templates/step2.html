@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>AI Language Cards</h1>
+<p>Выбранный язык: <strong>{{ language }}</strong></p>
+<p>Укажите тематику для набора слов, например, слова для общения в гостинице.</p>
+<form method="post">
+    <input type="text" name="topic" placeholder="Например, путешествия" required>
+    <button type="submit">Далее</button>
+</form>
+<form method="post">
+    <button type="submit" name="back" value="true">Назад</button>
+</form>
+{% endblock %}

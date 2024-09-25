@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "repl-nix-1104-1"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.3"
+openai = "^1.47.0"
+pyjwt = "^2.9.0"
+telegram = "^0.0.1"
+flask-session = "^0.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

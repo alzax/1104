@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Произошла ошибка</h1>
+<p>{{ message }}</p>
+<form action="{{ url_for('index') }}" method="get">
+    <button type="submit">Вернуться на главную</button>
+</form>
+{% endblock %}

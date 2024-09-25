@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>AI Language Cards</h1>
+<p>Какой язык вы хотите изучать?</p>
+<form method="post">
+    <input type="text" name="language" placeholder="Например, английский" required>
+    <button type="submit">Далее</button>
+</form>
+{% endblock %}
